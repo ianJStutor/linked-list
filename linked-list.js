@@ -49,11 +49,11 @@ class LinkedList {
 }
 
 class ListNode {
-constructor(item, prev, next) {
-this.item = item;
-this.next = next || null;
-this.prev = prev || null;
-}
+    constructor(item, prev, next) {
+        this.item = item;
+        this.next = next || null;
+        this.prev = prev || null;
+    }
 }
 
 export { LinkedList };
