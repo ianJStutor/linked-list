@@ -46,6 +46,10 @@ class LinkedList {
             current = current.next;
         }
     }
+
+    toString() {
+        return {head: this.head?.toString(), tail: this.tail?.toString()};
+    }
 }
 
 class ListNode {
@@ -53,6 +57,10 @@ class ListNode {
         this.item = item;
         this.next = next || null;
         this.prev = prev || null;
+    }
+
+    toString() {
+        return {item: this.item, next: this.next?.toString(), prev: this.prev?.toString()};
     }
 }
 
