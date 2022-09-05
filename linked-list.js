@@ -47,8 +47,12 @@ class LinkedList {
         }
     }
 
+    toObj() {
+        return {head: this.head?.toObj(), tail: this.tail?.toObj()};
+    }
+
     toString() {
-        return {head: this.head?.toString(), tail: this.tail?.toString()};
+        return JSON.stringify(this.toObj());
     }
 }
 
@@ -59,8 +63,12 @@ class ListNode {
         this.prev = prev || null;
     }
 
+    toObj() {
+        return {item: this.item, next: this.next?.toObj(), prev: this.prev?.toObj()};
+    }
+
     toString() {
-        return {item: this.item, next: this.next?.toString(), prev: this.prev?.toString()};
+        return JSON.stringify(this.toObj());
     }
 }
 

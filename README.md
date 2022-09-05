@@ -16,6 +16,14 @@ This library is a doubly linked list with an O(1) insertion time and O(n) iterat
 
 Built with vanilla JavaScript, my favorite flavor!
 
+### Testing
+
+```
+npm test
+```
+
+Provided testing uses Jest on a Node environment. Please note that special configuration has been made for Node and for Jest to both use ECMAScript modules (<code>import</code> instead of the Common.js <code>require()</code>).
+
 ### Usage
 
 Include <code>linked-list.js</code> in your project. Import the JS into your main JavaScript file and call <code>new LinkedList()</code>. The return value is an object with four possible functions: <code>add(item)</code>, <code>remove()</code>, <code>find(func)</code>, and <code>forEach(func)</code>.
@@ -90,3 +98,19 @@ LinkedList.prototype.forEach(func)
 ```
 
 Passes each item in the <code>LinkedList</code> as an argument to the callback <code>func</code>. Compare to <code>Array.prototype.forEach</code>.
+
+##### toObj
+
+```js
+LinkedList.prototype.toObj()
+```
+
+Converts the <code>LinkedList</code> into a JavaScript object literal. Note: by default, <code>LinkedList</code> uses <code>null</code> values as an empty-set placeholder. These <code>null</code> values are changed to <code>undefined</code> values when converted into an object. This enables an easy later conversion to JSON, which cannot accept <code>null</code> values.
+
+##### toString
+
+```js
+LinkedList.prototype.toString()
+```
+
+Converts the <code>LinkedList</code> into a JavaScript string using <code>JSON.stringify()</code>.
