@@ -38,7 +38,9 @@ The following was inserted into <code>package.json</code> for testing to work.
 
 ### Usage
 
-Include <code>linked-list.js</code> in your project. Import the JS into your main JavaScript file and call <code>new LinkedList()</code>. The return value is an object with four possible functions: <code>add(item)</code>, <code>remove()</code>, <code>find(func)</code>, and <code>forEach(func)</code>.
+Include <code>linked-list.js</code> in your project. Import the JS into your main JavaScript file and call <code>new LinkedList()</code>. The return value is an object with five possible functions: <code>add(item)</code>, <code>remove()</code>, <code>find(func)</code>, <code>forEach(func)</code>, and <code>toArray()</code>.
+
+<code>LinkedList</code> also has a static function, <code>fromArray()</code>.
 
 #### HTML
 
@@ -52,7 +54,7 @@ Include <code>linked-list.js</code> in your project. Import the JS into your mai
 
 ```js
 //main.js
-import { betterRandom } from "./linked-list.js";
+import { LinkedList } from "./linked-list.js";
 const ll = new LinkedList();
 ```
 
@@ -64,6 +66,16 @@ const ll = new LinkedList();
 export { LinkedList };
 ```
 
+#### Static Methods
+
+##### fromArray
+
+```js
+LinkedList.fromArray(arr)
+```
+
+Creates and returns an instance of <code>LinkedList</code> when given a JavaScript array. Each element of the array will be added to the new <code>LinkedList</code>.
+
 #### Public Methods
 
 ##### constructor
@@ -72,7 +84,7 @@ export { LinkedList };
 new LinkedList()
 ```
 
-Creates a new instance of <code>LinkedList</code>.
+Creates a new instance of an empty <code>LinkedList</code>.
 
 ##### add
 
@@ -111,18 +123,10 @@ LinkedList.prototype.forEach(func)
 
 Passes each item in the <code>LinkedList</code> as an argument to the callback <code>func</code>. Compare to <code>Array.prototype.forEach</code>.
 
-##### toObj
+##### toArray
 
 ```js
-LinkedList.prototype.toObj()
+LinkedList.prototype.toArray()
 ```
 
-Converts the <code>LinkedList</code> into a JavaScript object literal. Note: by default, <code>LinkedList</code> uses <code>null</code> values as an empty-set placeholder. These <code>null</code> values are changed to <code>undefined</code> values when converted into an object. This enables an easy later conversion to JSON, which cannot accept <code>null</code> values.
-
-##### toString
-
-```js
-LinkedList.prototype.toString()
-```
-
-Converts the <code>LinkedList</code> into a JavaScript string using <code>JSON.stringify()</code>.
+Converts the <code>LinkedList</code> into a JavaScript array.

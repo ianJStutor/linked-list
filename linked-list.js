@@ -47,12 +47,16 @@ class LinkedList {
         }
     }
 
-    toObj() {
-        return {head: this.head?.toObj(), tail: this.tail?.toObj()};
-    }
+    toArray() {
+		const arr = [];
+		this.forEach(i => arr.push(i));
+		return arr;
+	}
 
-    toString() {
-        return JSON.stringify(this.toObj());
+    static fromArray(arr) {
+        const ll = new LinkedList();
+        arr.map(i => ll.add(i));
+        return ll;
     }
 }
 
@@ -61,14 +65,6 @@ class ListNode {
         this.item = item;
         this.next = next || null;
         this.prev = prev || null;
-    }
-
-    toObj() {
-        return {item: this.item, next: this.next?.toObj(), prev: this.prev?.toObj()};
-    }
-
-    toString() {
-        return JSON.stringify(this.toObj());
     }
 }
 

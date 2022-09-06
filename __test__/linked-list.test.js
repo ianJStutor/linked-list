@@ -134,37 +134,28 @@ describe("Using forEach", () => {
     });
 });
 
-describe("Using toObj", () => {
-    const val1 = {x:1,y:2},
-          expected = {item: val1, next: undefined, prev: undefined},
-          listExpected = {head: expected, tail: expected},
-          ll = new LinkedList();
-    ll.add(val1);
-    test("head to object equals object with item, next, and prev", () => {
-        expect(ll.head.toObj()).toEqual(expected);
+describe("Using static fromArray", () => {
+    const arr = [1,2,3,4,5,6,7,8],
+          ll = LinkedList.fromArray(arr),
+          llArr = [];
+    ll.forEach(i => llArr.push(i));
+    test("creates an instance of LinkedList class from array", () => {
+        expect(ll).toBeInstanceOf(LinkedList);
     });
-    test("tail to object equals object with item, next, and prev", () => {
-        expect(ll.tail.toObj()).toEqual(expected);
-    });
-    test("list to object equals object with head and tail", () => {
-        expect(ll.toObj()).toEqual(listExpected);
+    test("inserts array elements into list", () => {
+        expect(llArr).toEqual(arr);
     });
 });
 
-describe("Using toString", () => {
-    const val1 = {x:1,y:2},
-          obj = {item: val1, next: undefined, prev: undefined},
-          expected = JSON.stringify(obj),
-          listExpected = JSON.stringify({head: obj, tail: obj}),
+describe("Using toArray", () => {
+    const arr = [1,2,3,4,5,6,7,8],
           ll = new LinkedList();
-    ll.add(val1);
-    test("head to string equals stringified object with item, next, and prev", () => {
-        expect(ll.head.toString()).toEqual(expected);
+    for (let i of arr) ll.add(i);
+    const llArr = ll.toArray();
+    test("creates an instance of Array from list", () => {
+        expect(llArr).toBeInstanceOf(Array);
     });
-    test("tail to string equals stringified object with item, next, and prev", () => {
-        expect(ll.tail.toString()).toEqual(expected);
-    });
-    test("list to string equals stringified object with head and tail", () => {
-        expect(ll.toString()).toEqual(listExpected);
+    test("creates array from items", () => {
+        expect(llArr).toEqual(arr);
     });
 });
