@@ -88,6 +88,7 @@ input {
 button, label {
     font-size: 2em;
     padding: 10px 15px;
+    margin: 10px 4px 4px;
     border-radius: 10px;
     border: 2px solid var(--highlight);
     background-color: var(--highlight-dark);
@@ -98,6 +99,14 @@ button, label {
 }
 
 button:hover, label:hover {
+    background-color: var(--highlight);
+}
+
+main nav > button {
+    background-color: var(--off-black);
+}
+
+main nav > button:hover {
     background-color: var(--highlight);
 }
 
@@ -119,6 +128,7 @@ output {
     margin: 20px auto;
     padding: 10px;
     border-radius: 10px;
+    font-size: 1.5em;
 }
 
 ul {
