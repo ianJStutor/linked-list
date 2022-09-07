@@ -110,6 +110,11 @@ main nav > button:hover {
     background-color: var(--highlight);
 }
 
+main nav > button img {
+    height: 20px;
+    width: auto;
+}
+
 input[type="radio"] {
     width: 25px;
     margin-left: 100px;
