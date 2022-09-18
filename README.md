@@ -1,14 +1,8 @@
 # Linked List
 
-## Ian Marshall
-
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-### Live Site
-
-> [https://ianjstutor.github.io/linked-list/](https://ianjstutor.github.io/linked-list/)
-
-### Description
+## Description
 
 Linked lists are scalable, fast, and more efficient than mutable arrays. They can be implemented with stacks, higher math, and sparse matrices, to name a few use cases.
 
@@ -16,7 +10,15 @@ This library is a doubly linked list with an O(1) insertion time and O(n) iterat
 
 Built with vanilla JavaScript, my favorite flavor!
 
-### Testing
+## Author
+
+> [Ian Marshall](https://ianjstutor.github.io/ian-marshall/)
+
+## Live Site
+
+> [https://ianjstutor.github.io/linked-list/](https://ianjstutor.github.io/linked-list/)
+
+## Testing
 
 ```bash
 npm test
@@ -36,13 +38,13 @@ The following was inserted into <code>package.json</code> for testing to work.
 }
 ```
 
-### Usage
+## Usage
 
 Include <code>linked-list.js</code> in your project. Import the JS into your main JavaScript file and call <code>new LinkedList()</code>. The return value is an object with five possible functions: <code>add(item)</code>, <code>remove()</code>, <code>find(func)</code>, <code>forEach(func)</code>, and <code>toArray()</code>.
 
 <code>LinkedList</code> also has a static function, <code>fromArray()</code>.
 
-#### HTML
+### HTML
 
 ```html
 <head>
@@ -50,7 +52,7 @@ Include <code>linked-list.js</code> in your project. Import the JS into your mai
 </head>
 ```
 
-#### JavaScript
+### JavaScript
 
 ```js
 //main.js
@@ -58,17 +60,17 @@ import { LinkedList } from "./linked-list.js";
 const ll = new LinkedList();
 ```
 
-### Documentation
+## Documentation
 
-#### Module Export
+### Module Export
 
 ```js
 export { LinkedList };
 ```
 
-#### Static Methods
+### Static Methods
 
-##### fromArray
+#### fromArray
 
 ```js
 LinkedList.fromArray(arr)
@@ -76,9 +78,9 @@ LinkedList.fromArray(arr)
 
 Creates and returns an instance of <code>LinkedList</code> when given a JavaScript array. Each element of the array will be added to the new <code>LinkedList</code>.
 
-#### Public Methods
+### Public Methods
 
-##### constructor
+#### constructor
 
 ```js
 new LinkedList()
@@ -86,7 +88,7 @@ new LinkedList()
 
 Creates a new instance of an empty <code>LinkedList</code>.
 
-##### add
+#### add
 
 ```js
 LinkedList.prototype.add(item)
@@ -99,7 +101,7 @@ const ll = new LinkedList();
 ll.add("a").add("b").add("c");
 ```
 
-##### remove
+#### remove
 
 ```js
 LinkedList.prototype.remove()
@@ -107,7 +109,7 @@ LinkedList.prototype.remove()
 
 Removes the last <code>item</code> inserted into the <code>LinkedList</code> and returns it.
 
-##### find
+#### find
 
 ```js
 LinkedList.prototype.find(func)
@@ -115,7 +117,7 @@ LinkedList.prototype.find(func)
 
 Searches the <code>LinkedList</code> for the first item that produces a <code>true</code> return value from the callback <code>func</code> when passed in as an argument. If no item produces a <code>true</code> return value then <code>find</code> returns <code>undefined</code>. Compare to <code>Array.prototype.find</code>.
 
-##### forEach
+#### forEach
 
 ```js
 LinkedList.prototype.forEach(func)
@@ -123,7 +125,7 @@ LinkedList.prototype.forEach(func)
 
 Passes each item in the <code>LinkedList</code> as an argument to the callback <code>func</code>. Compare to <code>Array.prototype.forEach</code>.
 
-##### toArray
+#### toArray
 
 ```js
 LinkedList.prototype.toArray()
