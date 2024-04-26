@@ -4,7 +4,7 @@
 
 ## Description
 
-Linked lists are scalable, fast, and more efficient than mutable arrays. They can be implemented for stacks, higher math, and sparse matrices, to name a few use cases.
+Linked lists are scalable, fast, and more efficient than mutable arrays. They can be implemented for stacks, higher math, and sparse matrices, to name a few use cases. By design, linked lists are more efficient than arrays with regard to memory management for insertion and deletion of elements. However, it is slower than arrays with regard to reading or iterating.
 
 This library is a doubly linked list with an O(1) insertion time and O(n) iteration time.
 
